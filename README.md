@@ -183,30 +183,6 @@ Ils sont automatiquement téléchargés dans les notebooks (ou doivent être fou
 
 ---
 
-semantic_pruning_pipeline:
-  pruning_targets:
-    attention_heads:
-      pruning_type: structured
-      criterion: semantic_importance
-      effect:
-        - remove_entire_heads
-        - reduce_attention_computation
-
-    mlp_layers:
-      pruning_type: structured
-      criterion: intermediate_dimension_reduction
-      effect:
-        - reduce_hidden_dimension
-        - remove_redundant_neurons
-
-  recovery_stage:
-    method: LoRA
-    trainable_parameters: low_rank_adapters
-    goal: recover_performance_after_pruning
-
-  deployment:
-    lora_merge: enabled
-    inference_overhead: none
 
 
 ## License
