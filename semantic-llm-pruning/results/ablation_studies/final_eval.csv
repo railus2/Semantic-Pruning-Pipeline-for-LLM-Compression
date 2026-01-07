@@ -1,0 +1,10 @@
+model,input_model,tag,prune_ratio_heads,prune_ratio_mlp,ppl,latency_ms_per_token,params,gpu,dtype,timestamp,pruning_type,prune_ratio,num_attention_heads,num_key_value_heads,perplexity_wikitext2,group,path
+TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T,baseline,baseline,0.0,0.0,7.382190704345703,42.52993315458298,1100048384,Tesla T4,float16,2026-01-06 22:26:19,,,,,,,
+TinyLlama-1.1B,,,,,,27.198477337757748,1048143872,,,,head_qo,0.2,24.0,3.0,17.405532836914062,,
+TinyLlama-1.1B,pruned_heads_20,pruned_heads20_mlp10,,0.1,15.424039840698242,27.225244790315628,971909120,,,,,,,,,,
+TinyLlama-1.1B,pruned_heads_20,pruned_heads20_mlp20,,0.2,19.438156127929688,27.839384973049164,895809536,,,,,,,,,,
+TinyLlama-1.1B,baseline,baseline_mlp10,,0.1,8.019798278808594,28.76850217580796,1023813632,,,,,,,,,,
+TinyLlama-1.1B,baseline,baseline_mlp20,,0.2,9.194290161132812,27.84054602185885,947714048,,,,,,,,,,
+,,heads20_mlp10_lora_merged,,,11.621904373168945,26.57567337155342,971909120,Tesla T4,float16,2026-01-07 11:40:22,,,,,,,/kaggle/input/04-recovery-lora/semantic-llm-pruning/models/heads20_mlp10_lora_merged
+,,heads20_mlp20_lora_merged,,,13.24698543548584,27.408014982938766,895809536,Tesla T4,float16,2026-01-07 11:41:33,,,,,,,/kaggle/input/04-recovery-lora/semantic-llm-pruning/models/heads20_mlp20_lora_merged
+,,heads20,,,13.719694137573242,26.80649235844612,1048143872,Tesla T4,float16,2026-01-07 11:42:37,,,,,,,/kaggle/input/02-structured-head-pruning-qo-gqa/semantic-llm-pruning/models/pruned_heads_20

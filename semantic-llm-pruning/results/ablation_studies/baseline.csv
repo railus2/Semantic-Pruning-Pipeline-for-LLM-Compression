@@ -1,0 +1,2 @@
+model,input_model,tag,prune_ratio_heads,prune_ratio_mlp,ppl,latency_ms_per_token,params,gpu,dtype,timestamp
+TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T,baseline,baseline,0.0,0.0,7.382190704345703,37.80996799468994,1100048384,Tesla T4,float16,2026-01-07 11:22:39

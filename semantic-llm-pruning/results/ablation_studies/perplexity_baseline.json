@@ -1,0 +1,10 @@
+{
+  "model_id": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+  "dataset": "wikitext-2-raw-v1:test",
+  "metric": "perplexity",
+  "perplexity": 7.382190704345703,
+  "eval_seconds": 52.66452479362488,
+  "gpu": "Tesla T4",
+  "max_memory_allocated_gb": 1.3066186904907227,
+  "dtype": "float16"
+}

@@ -1,0 +1,10 @@
+{
+  "model_id": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+  "metric": "ms_per_token",
+  "ms_per_token": 37.80996799468994,
+  "prompt": "Write a short paragraph about pruning.",
+  "gen_tokens": 64,
+  "gpu": "Tesla T4",
+  "dtype": "float16",
+  "timestamp": "2026-01-07 11:22:39"
+}

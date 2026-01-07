@@ -1,0 +1,5 @@
+model,input_model,tag,prune_ratio_mlp,ppl,latency_ms_per_token,params
+TinyLlama-1.1B,pruned_heads_20,pruned_heads20_mlp10,0.1,15.424039840698242,27.08899850646655,971909120
+TinyLlama-1.1B,pruned_heads_20,pruned_heads20_mlp20,0.2,19.438156127929688,27.138307690620422,895809536
+TinyLlama-1.1B,baseline,baseline_mlp10,0.1,8.019798278808594,26.96259195605914,1023813632
+TinyLlama-1.1B,baseline,baseline_mlp20,0.2,9.194290161132812,27.04836552341779,947714048

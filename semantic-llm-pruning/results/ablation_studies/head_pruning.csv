@@ -1,0 +1,2 @@
+model,pruning_type,prune_ratio,num_attention_heads,num_key_value_heads,params,perplexity_wikitext2,latency_ms_per_token
+TinyLlama-1.1B,head_qo,0.2,24,3,1048143872,17.405532836914062,27.193083117405575
