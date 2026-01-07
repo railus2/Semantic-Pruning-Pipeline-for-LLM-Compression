@@ -108,7 +108,6 @@ semantic-llm-pruning/
 └── README.md
 
 yaml
-Copier le code
 
 ---
 
