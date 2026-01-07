@@ -183,6 +183,26 @@ Ils sont automatiquement téléchargés dans les notebooks (ou doivent être fou
 
 ---
 
+Pretrained LLM
+      ↓
+Baseline Evaluation
++ Importance Scoring
+(00_setup_01_baseline_and_importance.ipynb)
+      ↓
+Attention Head Pruning
+(02_head_pruning.ipynb)
+      ↓
+MLP Pruning
+(03_mlp_pruning.ipynb)
+      ↓
+LoRA Fine-Tuning
+(04_recovery_lora.ipynb)
+      ↓
+LoRA Merge
+      ↓
+Final Evaluation
+(06_final_eval.ipynb)
+
 
 
 ## License
