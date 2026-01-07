@@ -56,9 +56,15 @@ Ce notebook fait **du structured head pruning** avec les contraintes suivantes :
 ### Stage 2 — Structured MLP Pruning
 Notebook : `notebooks/03_mlp_pruning.ipynb`
 
-- Pruning structuré côté MLP
-- Expériences typiques : **-10% / -20%**
-- Comparaison directe vs head pruning (-20%)
+Ce notebook applique le **pruning structuré des neurones MLP** sur deux types de modèles :
+
+- **Modèle baseline + MLP pruning**
+- **Modèle déjà head-pruned + MLP pruning**
+
+Objectifs :
+- Isoler l’impact du pruning MLP seul
+- Évaluer l’effet cumulatif du pruning Attention + MLP
+- Comparer les trade-offs qualité / compression entre les variantes
 
 ### Stage 3 — Recovery Tuning (LoRA léger)
 Notebook : `notebooks/04_recovery_lora.ipynb`
@@ -124,13 +130,50 @@ Les fichiers de résultats et ablations sont disponibles ici :
 
 ## How to Run (Kaggle)
 
-1. Ouvrir les notebooks dans Kaggle
-2. Exécuter dans l’ordre :
-   1) `00-setup-01-baseline-and-importance.ipynb`  
-   2) `02_head_pruning.ipynb`  
-   3) `03_mlp_pruning.ipynb`  
-   4) `04_recovery_lora.ipynb`  
-   5) `06_final_eval.ipynb`
+⚠️ **Important**  
+Les modèles de base (checkpoint Hugging Face) **ne sont pas inclus dans le repository**.  
+Ils sont automatiquement téléchargés dans les notebooks (ou doivent être fournis via Hugging Face) avant toute exécution.
+
+### Prérequis
+- Compte Kaggle avec GPU (T4 / P100 recommandé)
+- Accès aux modèles Hugging Face (login HF si nécessaire)
+
+### Ordre d’exécution recommandé
+
+1. **Baseline & Importance Analysis**  
+   `00-setup-01-baseline-and-importance.ipynb`  
+   - Téléchargement du modèle de base  
+   - Mesures baseline (qualité, latence, mémoire)  
+   - Collecte des signaux d’importance
+
+2. **Structured Head Pruning**  
+   `02_head_pruning.ipynb`  
+   - Pruning structuré des têtes d’attention (Q + O uniquement)  
+   - Sauvegarde du modèle *head-pruned*
+
+3. **Structured MLP Pruning**  
+   `03_mlp_pruning.ipynb`  
+   - Deux variantes de modèles sont générées :
+     - **Baseline + MLP pruning**
+     - **Head-pruned model + MLP pruning**
+   - Comparaison directe entre :
+     - pruning MLP seul
+     - pruning Attention + MLP
+
+4. **Recovery Tuning (LoRA léger)**  
+   `04_recovery_lora.ipynb`  
+   - Recovery LoRA sur un nombre limité de modèles
+   - 1 epoch maximum
+
+5. **Final Evaluation & Analysis**  
+   `06_final_eval.ipynb`  
+   - Comparaison finale :
+     - baseline
+     - head-pruned
+     - MLP-pruned
+     - mix pruning
+     - après recovery LoRA
+
 
 ---
 
