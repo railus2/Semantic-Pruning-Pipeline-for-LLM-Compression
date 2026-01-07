@@ -50,8 +50,7 @@ Ce notebook fait **du structured head pruning** avec les contraintes suivantes :
 - ✅ taux principal : **-20% query heads**
   - exemple : **16 → 12 query heads**
   - **K/V restent à 2 heads** (GQA)
-- ❌ pas de mix attention+MLP ici
-- ❌ pas de -40% dans la version actuelle
+- ✅ **Pruning mix**
 
 ### Stage 2 — Structured MLP Pruning
 Notebook : `notebooks/03_mlp_pruning.ipynb`
